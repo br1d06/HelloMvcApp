@@ -1,7 +1,11 @@
+using WOD.WebUI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<FootballClubService>();
+builder.Services.AddScoped<NewsService>();
 
 var app = builder.Build();
 

@@ -1,204 +1,72 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using WOD.Domain.Models;
+@using HelloMvcApp.Controllers;
+@{
+	ViewData["Title"] = "Home Page";
 }
-<html>
-<head> 
-    <title>EPL Clubs</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Islam Mamilov" />
-    <meta name="description" lang="en" content="Test"/>
-    <meta name="keywods"
-        content="football,EPL,english premier league,premier league,soccer,MU,MC,Tottenham,arsenal"/>
-    <meta name="robots" content="all" />
-</head>
-<body>
-    <div class="wrapper">
-        <header class="nav-bar">
+@model WOD.WebUI.ViewModels.HomeViewModel;
 
-            <img src="https://metaratings.ru/upload/iblock/d48/d48ebab60551ce791853567fb1018b3c.png" />
+<div class="wrapper">
 
-            <nav>
-                <ul id="ul_top_hypers">                    
-                    <li><a href="#">Teams</a></li>
-                    <li><a href="#">Last Results</a></li>
-                    <li><a href="#">Tables</a></li>
-                    <li><a href="#">News</a></li>
-                    <li class="active"><a href="#">Home</a></li>
+	<div class="team-container" data-slick="{" infinite":false,"slidesToScroll":2,"variableWidth":true}">
 
-                </ul>
-            </nav>
+		<button aria-label="Previous" type="button" class="slick-arrow slick-prev slick-disabled" aria-disabled="true" style="display: inline-block;"><i class="icon-arrow-long"></i></button>
 
-        </header>
-        <div class="team-container" data-slick="{"infinite":false,"slidesToScroll":2,"variableWidth":true}"> 
+		@foreach (var clubsLogos in Model.ClubsLogos)
+		{
+			<a target="_blank" href="#"> <img src="@clubsLogos.Link" alt="@clubsLogos.AlternativeName;" height="50"> </a>
+		}
 
-            <button aria-label="Previous" type="button" class="slick-arrow slick-prev slick-disabled" aria-disabled="true" style="display: inline-block;"><i class="icon-arrow-long"></i></button>
-    
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/42.png" alt="Arsenal" height="50" > </a>
+		<button aria-label="Next" type="button" class="slick-arrow slick-next" style="" aria-disabled="false"><i class="icon-arrow-long icon-180deg"></i></button>
 
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/66.png" alt="Aston Villa" height="50"> </a>
+	</div>
 
-		    <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/44.png" alt="Burnley" height="50"> </a>
-        
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/35.png" alt="Bournemouth" height="50"> </a>
+	<div class="news-container">
+		<div class="news-info">
+			
+			@if (Model.ContainerNews.Count == 0)
+			{
+				<a news="blah" href="#"><h2><span>@Model.DefaultNews.Title</span></h2><img src="@Model.DefaultNews.Image" /></a>
+				
+			}
+			else
+			{
+				@foreach (var news in Model.ContainerNews)
+				{
+					<a news="blah" href="#"><h2><span>@news.Title</span></h2><img src="@news.Image" /></a>
+					
+				}
+			}
+			
+		</div>
+		
 
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/55.png" alt="Brentford" height="50"> </a>
+		@for (int i = 1; i <= 10; i++)
+		{
+			<button class="btn">@(i)</button>
+		}
 
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/51.png" alt="Brighton" height="50"> </a>
+	</div>
 
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/49.png" alt="Chelsea" height="50"> </a>
+	<table class="EPLTable">
+		<thead>
+			<tr>
+				<th scope="col">Position</th>
+				<th scope="col">Club</th>
+				<th scope="col">Points</th>
+				<th scope="col">GD</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for(int i=0; i<Model.FootballClubs.Count; i++)
+			{							
+			<tr>
+				<th scope="row">@(i+1)</th>
+				<td>@Model.FootballClubs[i].FullName</td>
+				<td>@Model.FootballClubs[i].Points</td>
+				<td>@Model.FootballClubs[i].GoalsDifference</td>
+			</tr>
+			}
+		</tbody>
+	</table>
+</div>
 
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/52.png" alt="Crystal Palace" height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/45.png" alt="Everton" height="50" > </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/36.png" alt="Fulham" height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/40.png" alt="Liverpool" height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://i.pinimg.com/originals/ac/2b/f5/ac2bf526e0bb93f8712d63c7ad088c32.png" alt="Luton Town" height="50"> </a>
-        
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/50.png" alt="Manchester City" height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/33.png" alt="Manchester United " height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/34.png" alt="Newcastle United" height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/65.png" alt="Nottingham Forest" height="50"> </a>
-
-		    <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/47.png" alt="Tottenham Hottspur" height="50"> </a>
-        
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/62.png" alt="Sheffield United" height="50"> </a>
-
-		    <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/48.png" alt="West Ham United" height="50"> </a>
-
-            <a target="_blank" href="#"> <img src="https://media.api-sports.io/football/teams/39.png" alt="Wolverhampton Wanderers" height="50"> </a>
-
-            <button aria-label="Next" type="button" class="slick-arrow slick-next" style="" aria-disabled="false"><i class="icon-arrow-long icon-180deg"></i></button>
-        
-        </div>
-    
-        <div class="news-container">    
-            <div class="news-info">
-                <a news="blah" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/mbappe-real-madrid-move"><img src="https://cdn.dailysports.net/sport-news/dailysports/news/20230912/6450684eb5b8bbff4f1dff46246ad53079f1be85cd6ff1d44a90c4f48aae3ad7.png" /></a>        
-            </div>
-                <button class="btn">1</button> 
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-                <button class="btn">4</button>
-                <button class="btn">5</button>
-                <button class="btn">6</button>
-                <button class="btn">7</button>
-                <button class="btn">8</button>
-                <button class="btn">9</button>
-                <button class="btn">10</button>
-        </div>
-
-        <div class="EPLTable">
-
-        </div>
-    </div>
-    <div class="footer"> 
-        <div class="footer-widgets">
-            <div class="widget-box">
-                <div class="widget-heading">
-                        <h4>Premier League ( EPL )</h4>
-                </div>
-
-                <div class="widget-container">
-                        <ul id="menu-footer-1" class="menu">
-                            <li class="menu-item">
-                                <a href="#">
-                                    <span>Epl Fixtures</span>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">
-                                    <span>EPL Results</span>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#">
-                                    <span>EPL Table</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-            </div>
-            <div class="widget-box">
-                <div class="widget-heading">
-                    <h4>Premier League 2023</h4>
-                </div>
-                <div class="widget-container">
-                    <ul id="menu-footer-1" class="menu">
-                        <li class="menu-item">
-                            <a href="#">
-                                <span>Fixtures</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span>Results</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span>Tables</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="widget-box">
-                <div class="widget-heading">
-                    <h4>About EPL</h4>
-                </div>
-                <div class="widget-container">
-                    <ul id="menu-footer-1" class="menu">
-                        <li class="menu-item">
-                            <a href="#">
-                                <span>Privacy Policy</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span>Video</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span>Contact</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <hr width="50%" />
-        <div class="footer-container">
-            <font size="3">© Copyright EPL 2024, All Rights Reserved</font>
-            <br />
-            <font size="3">Arsenal, Aston Villa, Bournemouth, Brentford, Brighton, Burnley,Chelsea, Crystal Palace, Everton, Fulham, Leeds United, Leicester City, Liverpool, Manchester City, Manchester United, Newcastle United, Nottingham Forest, Southampton, Tottenham Hotspur, West Ham United, Wolverhampton Wanderers, Lutton Town, Sheffield United</font>
-            <br />
-            <a href="#">
-                <span>Premier League Standings 2024-2025</span>
-            </a>
-            <br />
-            <a href="#">
-                <span>Home</span>
-            </a>
-            <a href="#">
-                <span>Contact</span>
-            </a>
-            <a href="#">
-                <span>Privacy Policy</span>
-            </a>
-            <a href="#"><img src="https://w7.pngwing.com/pngs/434/247/png-transparent-fb-social-icons-circular-black-icon.png" /></a>
-            <a href="#"><img src="https://w7.pngwing.com/pngs/748/680/png-transparent-twitter-x-logo-thumbnail.png" /></a>
-            <a href="#"><img src="https://w7.pngwing.com/pngs/1003/904/png-transparent-computer-icons-logo-instagram-logo-instagram-logo-miscellaneous-text-symbol-thumbnail.png" /></a>
-        </div>
-    </div>
-    
-</body>
-
-</html>
