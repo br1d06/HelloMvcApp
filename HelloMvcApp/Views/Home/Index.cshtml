@@ -1,9 +1,12 @@
 ﻿@using WOD.Domain.Models;
 @using HelloMvcApp.Controllers;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
 	ViewData["Title"] = "Home Page";
 }
 @model WOD.WebUI.ViewModels.HomeViewModel;
+
 
 <div class="wrapper">
 
@@ -19,34 +22,33 @@
 		<button aria-label="Next" type="button" class="slick-arrow slick-next" style="" aria-disabled="false"><i class="icon-arrow-long icon-180deg"></i></button>
 
 	</div>
-
-	<div class="news-container">
-		<div class="news-info">
-			
-			@if (Model.ContainerNews.Count == 0)
-			{
-				<a news="blah" href="#"><h2><span>@Model.DefaultNews.Title</span></h2><img src="@Model.DefaultNews.Image" /></a>
+	
+		<div class="news-container">
+			<div class="news-info">
 				
-			}
-			else
-			{
-				@foreach (var news in Model.ContainerNews)
+				@if (Model.ContainerNews.Count == 0)
 				{
-					<a news="blah" href="#"><h2><span>@news.Title</span></h2><img src="@news.Image" /></a>
-					
+					<a news="blah" href="#"><h2><span>@Model.DefaultNews.Title</span></h2><img src="@Model.DefaultNews.Image" /></a>
+
 				}
-			}
-			
+				else
+				{
+
+					<a news="blah" href="#"><h2><span>@Model.News.Title</span></h2><img src="@Model.News.Image" /></a>
+
+				}
+
+			</div>
+			<form method="post" asp-antiforgery="true">
+				@for (int i = 1; i <= Model.ContainerNews.Count; i++)
+					{
+						<input type="submit" value="@(i)">  <!--Нужно заставить заработать эти кнопки, чтобы в зависимости от нажатой кнопки (ее i-значения),
+															в объект Model.News подставлялся ContainerNews[i], как указано в методе OnPost(). 															
+															-->
+					}
+			</form>
 		</div>
-		
-
-		@for (int i = 1; i <= 10; i++)
-		{
-			<button class="btn">@(i)</button>
-		}
-
-	</div>
-
+	
 	<table class="EPLTable">
 		<thead>
 			<tr>

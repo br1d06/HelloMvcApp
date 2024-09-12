@@ -6,21 +6,27 @@
 @model WOD.WebUI.ViewModels.NewsViewModel;
 
 <div class="wrapper">
-    <div class="news-widgets">
+    <div class="news-widgets-container">
+        
 
-        @if (Model.AllNews == null || Model.AllNews.Count == 0)
-        {
-            <a news="blah" href="#"><img src="@Model.DefaultNews.Image" /></a>
-            <span>@Model.DefaultNews.Title</span>
-        }
-        else
-        {
-            @foreach (var news in Model.AllNews)
+            @if (Model.AllNews == null || Model.AllNews.Count == 0)
             {
-                <a news="blah" href="#"><img src="@news.Image" /></a>
-                <span>@news.Title</span>
+                <div class="news-widgets">
+                    <a news="blah" href="#"><img src="@Model.DefaultNews.Image" /></a>
+				    <span>@Model.DefaultNews.Title</span>
+			    </div>
             }
-        }
+            else
+            {
+                @foreach (var news in Model.AllNews)
+                {
+                    <div class="news-widgets">
+                    <a news="blah" href="#"><img src="@news.Image" /></a>
+                    <span>@news.Title</span>
+                    </div>
+                }
+            }
     </div>
+	
 </div>
 

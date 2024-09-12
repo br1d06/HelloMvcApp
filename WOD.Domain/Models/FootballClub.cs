@@ -8,6 +8,7 @@ namespace WOD.Domain.Models
 {
     public class FootballClub
     {
+        public int Id { get; set; }
         public string FullName { get; private set; }
 
         public string Logo { get; private set; }   

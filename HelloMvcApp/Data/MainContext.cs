@@ -7,7 +7,7 @@ using WOD.Domain.Models;
 
 namespace WebUI.Data
 {
-	public class MainContext : Microsoft.EntityFrameworkCore.DbContext
+	public class MainContext : DbContext
     {
 		public MainContext(DbContextOptions<MainContext> options)
 			: base(options)

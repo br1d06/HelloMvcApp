@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
-
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using WOD.Domain.Models;
@@ -47,9 +46,7 @@ namespace HelloMvcApp.Controllers
                 new ClubLogo("https://media.api-sports.io/football/teams/48.png","West Ham United"),
                 new ClubLogo("https://media.api-sports.io/football/teams/39.png","Wolverhampton Wanderers")
             };
-
-            
-            
+     
             var footballClubs = new List<FootballClub>();
 			
             for (int i = 0; i < clubsLogos.Count; i++)
@@ -57,7 +54,7 @@ namespace HelloMvcApp.Controllers
 				footballClubs.Add(new FootballClub(clubsLogos[i]));
 			}
             
-            var homeViewModel = new HomeViewModel(clubsLogos, footballClubs, NewsService.allNews);
+			var homeViewModel = new HomeViewModel(clubsLogos, footballClubs, NewsService.allNews);
           
             return View("~/Views/Home/Index.cshtml", homeViewModel);
         }
@@ -71,5 +68,6 @@ namespace HelloMvcApp.Controllers
         {           
             return View(new PrivacyViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
+
     }
 }
