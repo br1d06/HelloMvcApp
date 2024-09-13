@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WOD.Domain.Models;
 using WOD.WebUI.Services;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WOD.WebUI.ViewModels;
@@ -15,10 +14,7 @@ public class HomeViewModel : PageModel
     public News DefaultNews { get; }
 	[BindProperty]
 	public News News { get; set; }
-	public void OnPost(List<News> containerNews, int index)
-	{
-        News = containerNews[index];
-	}
+	
 
 	public HomeViewModel(List<ClubLogo> clubsLogos, List<FootballClub> footballClubs,List<News> allNews)
     {       
@@ -29,5 +25,19 @@ public class HomeViewModel : PageModel
         News = ContainerNews[0];
         DefaultNews= NewsService.DefaultNews;
 	}
+	[BindProperty]
+	public Product Product { get; set; } = new("", 0, "");
+	public string Message { get; private set; } = "Добавление товара";
+
+	public void OnPost()
+	{
+		Message = $"Добавлен новый товар: {Product.Name} ({Product.Company})";
+	}
+	
+
+	
 }
 
+public record class Product(string Name, int Price, string Company);
+	
+		

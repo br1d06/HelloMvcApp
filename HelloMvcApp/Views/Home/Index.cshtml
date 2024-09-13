@@ -39,7 +39,7 @@
 				}
 
 			</div>
-			<form method="post" asp-antiforgery="true">
+			<form method="post" asp-antiforgery="true" >
 				@for (int i = 1; i <= Model.ContainerNews.Count; i++)
 					{
 						<input type="submit" value="@(i)">  <!--Нужно заставить заработать эти кнопки, чтобы в зависимости от нажатой кнопки (ее i-значения),
@@ -70,5 +70,25 @@
 			}
 		</tbody>
 	</table>
+	<!-- Все что написано ниже и в HomeViewModel после объявления класса Product - это чисто пример работы кнопок, который я просто скопировал и вставил как есть, но он тоже не работает.
+		Тут всего лишь должно меняться сообщение в зависимости от введенных данных и нажатия кнопки, но этого не происходит.
+	-->
+	<h2>@Model.Message</h2>
+	<form method="post" asp-antiforgery="true">
+		<p>
+			<label asp-for="Product.Name">Название</label><br />
+			<input type="text" asp-for="Product.Name" />
+		</p>
+		<p>
+			<label asp-for="Product.Price">Цена</label><br />
+			<input asp-for="Product.Price" />
+		</p>
+		<p>
+			<label asp-for="Product.Company">Производитель</label><br />
+			<input type="text" asp-for="Product.Company" />
+		</p>
+		<input type="submit" value="Отправить" />
+	</form>
+
 </div>
 
