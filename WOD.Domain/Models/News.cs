@@ -22,6 +22,7 @@ namespace WOD.Domain.Models
 			Image=image;
 			ReleaseDate = DateTime.Now;
 		}
-		
+
+		public News() { }
 	}
 }

@@ -1,0 +1,20 @@
+﻿@using WOD.Domain.Models;
+@using HelloMvcApp.Controllers;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	ViewData["Title"] = "Home Page";
+}
+@model WOD.WebUI.ViewModels.HomeViewModel;
+
+<div class="wrapper">
+	<div class="football-clubs-list" >
+		@foreach (var footballClub in Model.FootballClubs)
+		{
+			<div class="team-card">
+				<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName;" style="vertical-align:middle;"></a>
+				<p style="vertical-align:middle;">@footballClub.FullName</p>
+			</div>
+		}		
+	</div>
+</div>

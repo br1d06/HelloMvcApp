@@ -5,15 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WOD.Domain.Models;
 
-namespace WebUI.Data
+namespace WebUI.Data;
+public class MainContext : DbContext
 {
-	public class MainContext : DbContext
-    {
-		public MainContext(DbContextOptions<MainContext> options)
-			: base(options)
-		{
-		}
-
-		public DbSet<News> News { get; set; } = default!;
+	public MainContext(DbContextOptions<MainContext> options)
+		: base(options)
+	{
+			
 	}
+
+	public DbSet<News> News { get; set; } = default!;
 }

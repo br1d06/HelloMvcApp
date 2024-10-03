@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,10 +32,12 @@ namespace WOD.Domain.Models
 
         public int GoalsDifference=> GoalsScored - GoalsMissed;
 
-        public FootballClub(ClubLogo clubsLogo)
+        public FootballClub(string fullName, string logo)
         {           
-            FullName = clubsLogo.AlternativeName;
-            Logo = clubsLogo.Link;                         
+            FullName = fullName;
+            Logo = logo;                         
         }       
+
+        public FootballClub() { }
     }
 }

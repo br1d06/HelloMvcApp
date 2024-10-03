@@ -1,6 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using WebUI.Data;
 using WOD.WebUI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MainContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MainContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

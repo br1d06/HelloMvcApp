@@ -2,42 +2,31 @@
 using WOD.Domain.Models;
 using WOD.WebUI.Services;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using HelloMvcApp.Controllers;
 
 namespace WOD.WebUI.ViewModels;
 
-public class HomeViewModel : PageModel
+public class HomeViewModel
 {
-    public List<FootballClub> FootballClubs { get; private set; }
-    public List<ClubLogo> ClubsLogos { get; private set; }
-    public Dictionary<string, int> Table {  get; private set; }
-    public List<News> ContainerNews { get; private set; }
+	public List<FootballClub> FootballClubs { get; set; }
+    public List<FootballClub> ClubsLogos { get; set; }
+    public Dictionary<string, int> Table {  get; set; }
+    public List<News> ContainerNews { get; set; }
     public News DefaultNews { get; }
-	[BindProperty]
-	public News News { get; set; }
-	
+    public News TranslayedNews { get; set; } 
 
-	public HomeViewModel(List<ClubLogo> clubsLogos, List<FootballClub> footballClubs,List<News> allNews)
-    {       
-        ClubsLogos = clubsLogos;
+	public HomeViewModel(List<FootballClub> footballClubs,List<News> allNews, int index=0)
+    {
         FootballClubs = footballClubs;
         Table = FootballClubService.GetTable(FootballClubs);
         ContainerNews = NewsService.GetContainerNews(allNews);
-        News = ContainerNews[0];
         DefaultNews= NewsService.DefaultNews;
+        TranslayedNews = ContainerNews[index];
 	}
-	[BindProperty]
-	public Product Product { get; set; } = new("", 0, "");
-	public string Message { get; private set; } = "Добавление товара";
-
-	public void OnPost()
-	{
-		Message = $"Добавлен новый товар: {Product.Name} ({Product.Company})";
-	}
-	
-
-	
+    
+    public HomeViewModel() 
+    {   
+    }
 }
-
-public record class Product(string Name, int Price, string Company);
 	
 		

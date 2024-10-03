@@ -10,46 +10,37 @@
 
 <div class="wrapper">
 
-	<div class="team-container" data-slick="{" infinite":false,"slidesToScroll":2,"variableWidth":true}">
+	<div class="team-container">
 
-		<button aria-label="Previous" type="button" class="slick-arrow slick-prev slick-disabled" aria-disabled="true" style="display: inline-block;"><i class="icon-arrow-long"></i></button>
+		<button aria-label="Previous" type="button" id="slideLeft"></button>
 
-		@foreach (var clubsLogos in Model.ClubsLogos)
+		@foreach (var footballClub in Model.FootballClubs)
 		{
-			<a target="_blank" href="#"> <img src="@clubsLogos.Link" alt="@clubsLogos.AlternativeName;" height="50"> </a>
+			<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName" height="75" width="75"> </a>
 		}
 
-		<button aria-label="Next" type="button" class="slick-arrow slick-next" style="" aria-disabled="false"><i class="icon-arrow-long icon-180deg"></i></button>
+		<button aria-label="Next" type="button" id="slideRight"></button>
 
 	</div>
+
+	<div class="news-container">	
+		<div class="news-info">			
+			@if (Model.ContainerNews.Count == 0)
+			{					
+				<a news="blah" href="#"><h2><span>@Model.DefaultNews.Title</span></h2><img src="@Model.DefaultNews.Image" /></a>
+			}
+			else
+			{					
+				<a news="blah" href="#"><h2><span>@Model.TranslayedNews.Title</span></h2><img src="@Model.TranslayedNews.Image" /></a>					
+			}
+		</div>			
+		@for (int i = 0; i < Model.ContainerNews.Count; i++)
+		{
+			<a type="button" href="/News/GetTranslayedNews?index=@(i)" class="btn">@(i+1)</a>
+		}
+	</div>
 	
-		<div class="news-container">
-			<div class="news-info">
-				
-				@if (Model.ContainerNews.Count == 0)
-				{
-					<a news="blah" href="#"><h2><span>@Model.DefaultNews.Title</span></h2><img src="@Model.DefaultNews.Image" /></a>
-
-				}
-				else
-				{
-
-					<a news="blah" href="#"><h2><span>@Model.News.Title</span></h2><img src="@Model.News.Image" /></a>
-
-				}
-
-			</div>
-			<form method="post" asp-antiforgery="true" >
-				@for (int i = 1; i <= Model.ContainerNews.Count; i++)
-					{
-						<input type="submit" value="@(i)">  <!--Нужно заставить заработать эти кнопки, чтобы в зависимости от нажатой кнопки (ее i-значения),
-															в объект Model.News подставлялся ContainerNews[i], как указано в методе OnPost(). 															
-															-->
-					}
-			</form>
-		</div>
-	
-	<table class="EPLTable">
+	<table class="EPLTable-mini">
 		<thead>
 			<tr>
 				<th scope="col">Position</th>
@@ -63,32 +54,12 @@
 			{							
 			<tr>
 				<th scope="row">@(i+1)</th>
-				<td>@Model.FootballClubs[i].FullName</td>
+				<td><img src="@Model.FootballClubs[i].Logo"/> @Model.FootballClubs[i].FullName</td>
 				<td>@Model.FootballClubs[i].Points</td>
 				<td>@Model.FootballClubs[i].GoalsDifference</td>
 			</tr>
 			}
 		</tbody>
 	</table>
-	<!-- Все что написано ниже и в HomeViewModel после объявления класса Product - это чисто пример работы кнопок, который я просто скопировал и вставил как есть, но он тоже не работает.
-		Тут всего лишь должно меняться сообщение в зависимости от введенных данных и нажатия кнопки, но этого не происходит.
-	-->
-	<h2>@Model.Message</h2>
-	<form method="post" asp-antiforgery="true">
-		<p>
-			<label asp-for="Product.Name">Название</label><br />
-			<input type="text" asp-for="Product.Name" />
-		</p>
-		<p>
-			<label asp-for="Product.Price">Цена</label><br />
-			<input asp-for="Product.Price" />
-		</p>
-		<p>
-			<label asp-for="Product.Company">Производитель</label><br />
-			<input type="text" asp-for="Product.Company" />
-		</p>
-		<input type="submit" value="Отправить" />
-	</form>
-
 </div>
 

@@ -12,5 +12,9 @@ public class NewsViewModel
         DefaultNews = NewsService.DefaultNews;
         AllNews = allNews;
     }
+
+    public NewsViewModel() 
+    {  
+    }      
 }
 

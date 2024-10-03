@@ -24,18 +24,18 @@ namespace WOD.WebUI.Migrations
 			{
 				b.Property<int>("Id")
 					.ValueGeneratedOnAdd()
-					.HasColumnType("int");
+					.HasColumnType("bigint");
 
 				SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
 				b.Property<string>("Text")
-					.HasColumnType("nvarchar(max)");
+					.HasColumnType("text");
 
 				b.Property<DateTime>("ReleaseDate")
 					.HasColumnType("datetime2");
 
 				b.Property<string>("Title")
-					.HasColumnType("nvarchar(max)");
+					.HasColumnType("text");
 				
 				b.ToTable("News");
 			});

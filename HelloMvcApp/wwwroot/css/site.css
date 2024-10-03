@@ -7,20 +7,22 @@ html {
   min-height: 100%;
 }
 
-.body {
-  margin-bottom: 60px;
-
+html,
+body {
+    height: 100%;
 }
 .wrapper {
     margin-left: 15%;
     width: 70%;
-    height: 900px;
+    min-height: 100%;
+}
+
+.pb-3{
+    height: 100%;
 }
 
 .team-name {
-    color: black;
-
-     
+    color: black;    
 }
 
 .team-logo{
@@ -30,9 +32,7 @@ html {
 
 .nav-bar {
     margin:auto;
-
-    width:70%;
-    
+    width:70%; 
 }
 
 .nav-bar img{
@@ -40,19 +40,18 @@ html {
 }
 
 .team-container {
-    flex-wrap: wrap;
+    white-space: nowrap;
     overflow-x: scroll;
-    overflow:;
     gap: 15px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: 150px;
-    display: flex;
+    display: inline-block;
 }
 
-.team-card{
-    margin-right: 40px;
+.team-container button{
+    position: absolute;
 }
 
 .news-container {
@@ -62,8 +61,7 @@ html {
     height: 651px;
     background: image();
     margin-top: 30px;
-    float: left;
-    
+    float: left; 
 }
 
 .news-container .btn {
@@ -158,12 +156,38 @@ news-widgets-container{
     padding: 0 5px;
 }
 
-.EPLTable {
+.EPLTable{
+    width: 100%;
+    height: 800px; 
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.EPLTable img{
+    height: 33px;
+    width:33px;
+    margin-top: 10px;
+}
+
+.EPLTable table th{
+margin-right: 5px;
+}
+
+.EPLTable table td{
+    margin-top: 10px;
+}
+
+.EPLTable-mini {
     width: 35%;
     height: 651px;
     margin-right: auto;
     margin-top: 30px;
     float:right;
+}
+
+.EPLTable-mini img{
+    height: 15px;
+    width: 15px;
 }
 
 #ul_top_hypers li {
@@ -205,14 +229,6 @@ header nav ul li:not(.active):not(.btn) a:hover{
     border-bottom: 5px solid #00bfff;
 }
 
-.footer {
-    height: 320px;
-    width: 100%;
-    background-color: gray;
-    margin-top: 200px;
-}
-
-
 .widget-box {
     
     width: 33%;
@@ -222,6 +238,12 @@ header nav ul li:not(.active):not(.btn) a:hover{
     display: inline-block;
 }
 
+.footer {
+    height: auto;
+    width: 100%;
+    background-color: gray;
+    margin-top: 100px;
+}
 .footer-widgets {
     width: 70%;
     margin-left: auto;
@@ -251,4 +273,47 @@ header nav ul li:not(.active):not(.btn) a:hover{
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.button-sw-left{
+    position:absolute;
+    float:left;
+    height:10%;
+    margin-top: 45%;
+}
+
+.button-sw-right {
+    position: absolute;
+    float: right;
+    height: 10%;
+    margin-top: 45%;
+}
+
+.football-clubs-list{
+    width: 100%;
+    height: auto;
+}
+
+.football-clubs-list content {
+    display: inline-block;
+}
+
+.football-clubs-list a img{
+    height: 75px;
+    width: 75px;
+    vertical-align: middle;
+}
+
+.football-clubs-list p{
+
+}
+
+.team-card{
+    height: auto;
+    width: 10%;
+    float: left;
+}
+
+.team-card p {
+    vertical-align: middle;
 }
