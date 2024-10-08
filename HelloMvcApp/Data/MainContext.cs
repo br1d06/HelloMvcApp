@@ -14,5 +14,5 @@ public class MainContext : DbContext
 			
 	}
 
-	public DbSet<News> News { get; set; } = default!;
+	public DbSet<News> News { get; set; }
 }

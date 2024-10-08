@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z57nGer7g9N2zNqZjWe3S8iSduV3CprR3g8cJgmxsGz5LmCPcxyV0mmUM7j9WFo9sWrERu5CG+K1DFmta5hZOA==",
+  "dgSpecHash": "7aD51zihl3nhlgxZwCfYr2zJnnET0vE4tlPB9H2dho8cy48ZNHbmqFNBlgVFOGAR7W3mfcSRJl7zfX347H/oRw==",
   "success": true,
   "projectFilePath": "D:\\HelloMvcApp\\WOD.DAL\\WOD.DAL.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
     "C:\\Users\\islam\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\islam\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\islam\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "C:\\Users\\islam\\.nuget\\packages\\npgsql\\7.0.7\\npgsql.7.0.7.nupkg.sha512",
+    "C:\\Users\\islam\\.nuget\\packages\\npgsql\\7.0.8\\npgsql.7.0.8.nupkg.sha512",
     "C:\\Users\\islam\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.18\\npgsql.entityframeworkcore.postgresql.7.0.18.nupkg.sha512"
   ],
   "logs": []

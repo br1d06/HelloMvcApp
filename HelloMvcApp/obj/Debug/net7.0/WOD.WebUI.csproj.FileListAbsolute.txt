@@ -89,3 +89,4 @@ D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\System.Web.Http.dll
 D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 D:\HelloMvcApp\HelloMvcApp\obj\Debug\net7.0\WOD.WebUI.csproj.CopyComplete
+D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\libman.json

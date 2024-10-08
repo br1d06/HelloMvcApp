@@ -234,7 +234,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Npgsql/7.0.7": {
+      "Npgsql/7.0.8": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
@@ -623,10 +623,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Npgsql/7.0.7": {
-      "sha512": "A3BjyNebHjw/MahM6n3VnKbxrj/hQnMROEkUNUTjhUVv7yvcGnfBgw/FszahT9uCR23AVD2N/0Tvw1aHgxr9Gg==",
+    "Npgsql/7.0.8": {
+      "sha512": "0WDtkUi/U6katqRLBdjQi75KZFc7sKKK67IM3n19HKIAnGdUOCcrREoiU+EKD6S4if7tJtk4mtEIRfPtSu5K5A==",
       "type": "package",
-      "path": "npgsql/7.0.7",
+      "path": "npgsql/7.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -643,7 +643,7 @@
         "lib/netstandard2.0/Npgsql.xml",
         "lib/netstandard2.1/Npgsql.dll",
         "lib/netstandard2.1/Npgsql.xml",
-        "npgsql.7.0.7.nupkg.sha512",
+        "npgsql.7.0.8.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
       ]
@@ -668,6 +668,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Npgsql >= 7.0.8",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.18"
     ]
   },
@@ -715,6 +716,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Npgsql": {
+            "target": "Package",
+            "version": "[7.0.8, )"
+          },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[7.0.18, )"

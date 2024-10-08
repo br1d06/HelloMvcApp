@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using WebUI.Data;
 using WOD.Domain.Models;
 using WOD.WebUI.Services;
 using WOD.WebUI.ViewModels;
@@ -13,11 +14,13 @@ namespace HelloMvcApp.Controllers
 {
     public class HomeController : Controller
     {       
+        private readonly MainContext _context;
         private readonly ILogger<HomeController> _logger;
         private readonly FootballClubService _footballClubService;
 
-        public HomeController(ILogger<HomeController> logger, FootballClubService footballClubService)
+        public HomeController(ILogger<HomeController> logger, FootballClubService footballClubService, MainContext context)
         {
+            _context=context;
             _logger = logger;
             _footballClubService = footballClubService;
         }
@@ -45,12 +48,5 @@ namespace HelloMvcApp.Controllers
 
             return View("~/Views/Home/Table.cshtml", homeViewModel);
         }
-
-        public IActionResult FootballClubsList() 
-        {
-			var homeViewModel = new HomeViewModel(_footballClubService.GetFootballClubs(), NewsService.allNews);
-
-			return View("~/Views/Home/FootballClubsList.cshtml", homeViewModel);
-		}
     }
 }
