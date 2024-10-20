@@ -23,6 +23,13 @@ public class HomeViewModel
         DefaultNews= NewsService.DefaultNews;
         TranslayedNews = ContainerNews[index];
 	}
+
+    public HomeViewModel(List<FootballClub> footballClubs, List<Match> matches)
+    {
+		FootballClubs = footballClubs;
+
+
+	}
     
     public HomeViewModel() 
     {   

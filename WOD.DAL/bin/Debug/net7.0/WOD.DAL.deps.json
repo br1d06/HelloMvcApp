@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "WOD.DAL/1.0.0": {
         "dependencies": {
+          "Npgsql": "7.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "7.0.18"
         },
         "runtime": {
@@ -148,14 +149,14 @@
           }
         }
       },
-      "Npgsql/7.0.7": {
+      "Npgsql/7.0.8": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
         },
         "runtime": {
           "lib/net7.0/Npgsql.dll": {
-            "assemblyVersion": "7.0.7.0",
-            "fileVersion": "7.0.7.0"
+            "assemblyVersion": "7.0.8.0",
+            "fileVersion": "7.0.8.0"
           }
         }
       },
@@ -164,7 +165,7 @@
           "Microsoft.EntityFrameworkCore": "7.0.18",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.18",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.18",
-          "Npgsql": "7.0.7"
+          "Npgsql": "7.0.8"
         },
         "runtime": {
           "lib/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
@@ -272,12 +273,12 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
-    "Npgsql/7.0.7": {
+    "Npgsql/7.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A3BjyNebHjw/MahM6n3VnKbxrj/hQnMROEkUNUTjhUVv7yvcGnfBgw/FszahT9uCR23AVD2N/0Tvw1aHgxr9Gg==",
-      "path": "npgsql/7.0.7",
-      "hashPath": "npgsql.7.0.7.nupkg.sha512"
+      "sha512": "sha512-0WDtkUi/U6katqRLBdjQi75KZFc7sKKK67IM3n19HKIAnGdUOCcrREoiU+EKD6S4if7tJtk4mtEIRfPtSu5K5A==",
+      "path": "npgsql/7.0.8",
+      "hashPath": "npgsql.7.0.8.nupkg.sha512"
     },
     "Npgsql.EntityFrameworkCore.PostgreSQL/7.0.18": {
       "type": "package",

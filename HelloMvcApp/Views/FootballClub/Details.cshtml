@@ -1,0 +1,14 @@
+﻿@model WOD.Domain.Models.FootballClub
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.FullName</h1>
+
+<div class="wrapper">
+    <div class="fc-card">
+        <img src="@Model.Logo" />
+        <p>Points: @Model.Points</p>
+    </div>
+</div>

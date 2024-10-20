@@ -31,7 +31,7 @@
 			}
 			else
 			{					
-				<a news="blah" href="#"><h2><span>@Model.TranslayedNews.Title</span></h2><img src="@Model.TranslayedNews.Image" /></a>					
+				<a news="blah" href="/News/Details?id=@Model.TranslayedNews.Id"><h2><span>@Model.TranslayedNews.Title</span></h2><img src="@Model.TranslayedNews.Image" /></a>					
 			}
 		</div>			
 		@for (int i = 0; i < Model.ContainerNews.Count; i++)

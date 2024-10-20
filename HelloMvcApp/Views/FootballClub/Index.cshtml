@@ -11,8 +11,8 @@
 	<div class="football-clubs-list">
 		@foreach (var footballClub in Model.FootballClubs)
 		{
-			<div class="team-card">
-				<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName;" style="vertical-align:middle;"></a>
+			<div class="team-widget">
+				<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName" style="vertical-align:middle;"></a>
 				<p style="vertical-align:middle;">@footballClub.FullName</p>
 			</div>
 		}

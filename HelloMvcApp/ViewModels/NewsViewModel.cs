@@ -1,5 +1,6 @@
 ﻿using WOD.Domain.Models;
 using WOD.WebUI.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace WOD.WebUI.ViewModels;
 

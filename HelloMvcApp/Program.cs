@@ -5,7 +5,7 @@ using WOD.WebUI.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<MainContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("MainContext")));
+builder.Services.AddEntityFrameworkNpgsql().AddDbContext<MainContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -13,13 +13,6 @@ builder.Services.AddScoped<FootballClubService>();
 builder.Services.AddScoped<NewsService>();
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-
-    SeedData.Initialize(services);
-}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

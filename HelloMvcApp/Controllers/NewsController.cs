@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Data.Entity;
-using System.Diagnostics;
-using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
-using Microsoft.AspNetCore.Http.Features;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using WebUI.Data;
 using WOD.Domain.Models;
@@ -42,8 +38,8 @@ namespace HelloMvcApp.Controllers
 		}
 		public IActionResult Create() 
 		{
-			var newsViewModel = new NewsViewModel(NewsService.allNews);
-			return View("~/Views/News/Create.cshtml");
+			var newsViewModel = new NewsViewModel();
+			return View("~/Views/News/Create.cshtml", newsViewModel);
 		}
 
 		[HttpPost]
@@ -68,22 +64,22 @@ namespace HelloMvcApp.Controllers
 			return View();
 		}
 		public async Task<IActionResult> Details(int? id)
-{
-    if (id == null)
-    {
-        return NotFound();
-    }
+		{
+			if (id == null)
+			{
+				return NotFound();
+			}
 
-    var movie = await _context.News
-        .FirstOrDefaultAsync(m => m.Id == id);
+			var news = await _context.News
+				.FirstOrDefaultAsync(m => m.Id == id);
 	
-    if (movie == null)
-    {
-        return NotFound();
-    }
+			if (news == null)
+			{
+				return NotFound();
+			}
 
-    return View(movie);
-}
+			return View(news);
+		}
 		
 	}
 }

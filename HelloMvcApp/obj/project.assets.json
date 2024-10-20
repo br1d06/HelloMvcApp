@@ -46,6 +46,20 @@
           }
         }
       },
+      "EFCore.NamingConventions/7.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "[7.0.2, 8.0.0)",
+          "Microsoft.EntityFrameworkCore.Relational": "[7.0.2, 8.0.0)",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/EFCore.NamingConventions.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/EFCore.NamingConventions.dll": {}
+        }
+      },
       "EntityFramework/6.5.1": {
         "type": "package",
         "dependencies": {
@@ -1520,6 +1534,18 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "EFCore.NamingConventions/7.0.2": {
+      "sha512": "zJz6+YohdMHBFwi54RyH4bWMVTV6qHhIkGl7TWDyVE7HfOxM0gCux9cDg8yCTmG2ie99yY8XYlIaTGl/TNMnnQ==",
+      "type": "package",
+      "path": "efcore.namingconventions/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "efcore.namingconventions.7.0.2.nupkg.sha512",
+        "efcore.namingconventions.nuspec",
+        "lib/net6.0/EFCore.NamingConventions.dll"
       ]
     },
     "EntityFramework/6.5.1": {
@@ -4036,6 +4062,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "EFCore.NamingConventions >= 7.0.2",
       "EntityFramework >= 6.5.1",
       "Microsoft.AspNet.WebApi.Core >= 5.3.0",
       "Microsoft.EntityFrameworkCore >= 7.0.20",
@@ -4095,6 +4122,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "EFCore.NamingConventions": {
+            "target": "Package",
+            "version": "[7.0.2, )"
+          },
           "EntityFramework": {
             "target": "Package",
             "version": "[6.5.1, )"
