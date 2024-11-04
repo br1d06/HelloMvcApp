@@ -12,14 +12,10 @@
 
 	<div class="team-container">
 
-		<button aria-label="Previous" type="button" id="slideLeft"></button>
-
 		@foreach (var footballClub in Model.FootballClubs)
 		{
 			<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName" height="75" width="75"> </a>
 		}
-
-		<button aria-label="Next" type="button" id="slideRight"></button>
 
 	</div>
 
@@ -30,8 +26,8 @@
 				<a news="blah" href="#"><h2><span>@Model.DefaultNews.Title</span></h2><img src="@Model.DefaultNews.Image" /></a>
 			}
 			else
-			{					
-				<a news="blah" href="/News/Details?id=@Model.TranslayedNews.Id"><h2><span>@Model.TranslayedNews.Title</span></h2><img src="@Model.TranslayedNews.Image" /></a>					
+			{
+				<a news="blah" href="/News/Details?id=@Model.TranslayedNews.Id"><h2><span>@Model.TranslayedNews.Title</span></h2><img src="~/Content/NewsImages/@Model.TranslayedNews.Image" /></a>
 			}
 		</div>			
 		@for (int i = 0; i < Model.ContainerNews.Count; i++)
@@ -55,8 +51,8 @@
 			<tr>
 				<th scope="row">@(i+1)</th>
 				<td><img src="@Model.FootballClubs[i].Logo"/> @Model.FootballClubs[i].FullName</td>
-				<td>@Model.FootballClubs[i].Points</td>
-				<td>@Model.FootballClubs[i].GoalsDifference</td>
+				<td>@Model.FootballClubs[i].Points()</td>
+				<td>@Model.FootballClubs[i].GoalsDifference()</td>
 			</tr>
 			}
 		</tbody>

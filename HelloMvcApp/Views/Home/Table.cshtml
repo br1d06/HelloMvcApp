@@ -29,14 +29,14 @@
 				<tr>
 					<th scope="row">@(i + 1)</th>
 					<td><img src="@Model.FootballClubs[i].Logo" /> @Model.FootballClubs[i].FullName</td>					
-					<td>@Model.FootballClubs[i].Matches.Count</td>
+					<td>@Model.FootballClubs[i].Games</td>
 					<td>@Model.FootballClubs[i].Wins</td>
 					<td>@Model.FootballClubs[i].Loses</td>
 					<td>@Model.FootballClubs[i].Draws</td>
 					<td>@Model.FootballClubs[i].GoalsScored</td>
 					<td>@Model.FootballClubs[i].GoalsMissed</td>
-					<td>@Model.FootballClubs[i].GoalsDifference</td>					
-					<td>@Model.FootballClubs[i].Points</td>
+					<td>@Model.FootballClubs[i].GoalsDifference()</td>					
+					<td>@Model.FootballClubs[i].Points()</td>
 				</tr>
 			}
 		</tbody>

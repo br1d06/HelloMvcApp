@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WebUI.Data;
+using WOD.WebUI.Data;
 
 #nullable disable
 
 namespace WOD.WebUI.Migrations
 {
-    [DbContext(typeof(MainContext))]
+    [DbContext(typeof(PostgresContext))]
     partial class MainContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

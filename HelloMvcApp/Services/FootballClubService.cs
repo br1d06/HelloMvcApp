@@ -41,7 +41,7 @@ namespace WOD.WebUI.Services
                 if(table.ContainsKey(footballClubs[i].FullName))
                     continue;
 
-                table.Add(footballClubs[i].FullName, footballClubs[i].Points);
+                table.Add(footballClubs[i].FullName, footballClubs[i].Points());
             }
 			return table.ToDictionary(x => x.Key, x => x.Value);
 		}

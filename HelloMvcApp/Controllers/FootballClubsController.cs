@@ -1,20 +1,20 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using WebUI.Data;
 using WOD.Domain.Models;
 using WOD.WebUI.Services;
 using WOD.WebUI.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using WOD.WebUI.Data;
 
 namespace HelloMvcApp.Controllers
 {
 	public class FootballClubsController : Controller
 	{
-		private readonly MainContext _context;
+		private readonly PostgresContext _context;
 		private readonly ILogger<FootballClubsController> _logger;
 		private readonly FootballClubService _footballClubService;
 
-		public FootballClubsController(ILogger<FootballClubsController> logger, FootballClubService footballClubService, MainContext context)
+		public FootballClubsController(ILogger<FootballClubsController> logger, FootballClubService footballClubService, PostgresContext context)
 		{
 			_context=context;
 			_logger = logger;

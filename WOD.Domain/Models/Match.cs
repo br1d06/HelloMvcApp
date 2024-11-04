@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace WOD.Domain.Models;
+[Keyless]
 public class Match
 {
 	FootballClub FootballClub1 { get; set; }
@@ -32,5 +34,6 @@ public class Match
 		else
 			MatchResult = Result.Draw;
 	}
+	public Match() { }
 }
 

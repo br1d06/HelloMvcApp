@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using WebUI.Data;
+using WOD.WebUI.Data;
 
 #nullable disable
 
 namespace WOD.WebUI.Migrations
 {
-    [DbContext(typeof(MainContext))]
+    [DbContext(typeof(PostgresContext))]
     [Migration("20241017132004_InitialCreate")]
     partial class InitialCreate
     {

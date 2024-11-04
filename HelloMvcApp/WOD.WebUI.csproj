@@ -18,12 +18,24 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Npgsql" Version="7.0.8" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.18" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WOD.Domain\WOD.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\FootballClubsLogos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\NewsImages\CR7InJuventus.png" />
+    <None Include="wwwroot\Content\NewsImages\CR7InMU.png" />
+    <None Include="wwwroot\Content\NewsImages\MURubenAmori.png" />
+    <None Include="wwwroot\Content\NewsImages\photomode_30122023_192732.png" />
   </ItemGroup>
 
 </Project>

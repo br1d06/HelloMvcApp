@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\WOD.WebUI.bundle.scp.css"
     },
     {
+      "Id": "D:\\HelloMvcApp\\HelloMvcApp\\wwwroot\\Content\\NewsImages\\CR7InJuventus.png",
+      "PackagePath": "staticwebassets\\Content\\NewsImages\\CR7InJuventus.png"
+    },
+    {
+      "Id": "D:\\HelloMvcApp\\HelloMvcApp\\wwwroot\\Content\\NewsImages\\CR7InMU.png",
+      "PackagePath": "staticwebassets\\Content\\NewsImages\\CR7InMU.png"
+    },
+    {
+      "Id": "D:\\HelloMvcApp\\HelloMvcApp\\wwwroot\\Content\\NewsImages\\MURubenAmori.png",
+      "PackagePath": "staticwebassets\\Content\\NewsImages\\MURubenAmori.png"
+    },
+    {
+      "Id": "D:\\HelloMvcApp\\HelloMvcApp\\wwwroot\\Content\\NewsImages\\photomode_30122023_192732.png",
+      "PackagePath": "staticwebassets\\Content\\NewsImages\\photomode_30122023_192732.png"
+    },
+    {
       "Id": "D:\\HelloMvcApp\\HelloMvcApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

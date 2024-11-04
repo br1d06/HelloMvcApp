@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using WebUI.Data;
+using WOD.WebUI.Data;
 using System;
 using System.Linq;
 using WOD.Domain.Models;
+using WOD.WebUI.Data;
 
 namespace WOD.WebUI.ViewModels;
 
@@ -11,9 +12,9 @@ public static class SeedData
 {
     public static void Initialize(IServiceProvider serviceProvider)
     {
-		using var context = new MainContext(
+		using var context = new PostgresContext(
 			serviceProvider.GetRequiredService<
-				DbContextOptions<MainContext>>());
+				DbContextOptions<PostgresContext>>());
 		// Look for any news.
 		if (context.News.Any())
 		{

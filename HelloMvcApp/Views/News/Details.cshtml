@@ -3,40 +3,22 @@
 @{
     ViewData["Title"] = "Details";
 }
+<div class="wrapper">
+	<hr />
+	<div class="news-details">
+		<h1>@Html.DisplayFor(model => model.Title)</h1>
+		
+		<img src="~/Content/NewsImages/@Html.DisplayFor(model => model.Image)" />
 
-<h1>Details</h1>
+		@Html.DisplayFor(model => model.ReleaseDate) 
 
-<div>
-    <h4>News</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-    </dl>
+		<p><font size="4">@Html.DisplayFor(model => model.Text)</font></p>
+
+		<div>
+		<a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+		<a asp-action="Index">Back to List</a>
+		</div>
+	</div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+

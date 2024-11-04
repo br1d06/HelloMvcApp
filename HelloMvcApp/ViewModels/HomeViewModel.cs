@@ -24,11 +24,10 @@ public class HomeViewModel
         TranslayedNews = ContainerNews[index];
 	}
 
-    public HomeViewModel(List<FootballClub> footballClubs, List<Match> matches)
+    public HomeViewModel(List<FootballClub> footballClubs) 
     {
 		FootballClubs = footballClubs;
-
-
+		Table = FootballClubService.GetTable(FootballClubs);
 	}
     
     public HomeViewModel() 

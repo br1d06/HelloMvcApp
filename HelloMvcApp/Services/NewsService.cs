@@ -21,7 +21,7 @@ namespace WOD.WebUI.Services
 					2)
 			},
 			{
-				new News("Ronaldo in Juventus", 
+				new News("Ronaldo in Juventus",
 					"R7 in Italy", 
 					"https://avatars.mds.yandex.net/i?id=fd0b3b7e40e5863c0479acc6454ec43f_l-11924570-images-thumbs&n=13",
 					3)
@@ -40,13 +40,6 @@ namespace WOD.WebUI.Services
 			
 			else
 			return allNews;
-		}
-
-		public News news { get { return news = DefaultNews; } set { return; } }
-
-		public object ChangeNews(List<News> allNews, int i)
-		{
-			return news = allNews[i - 1];
 		}
 	}
 }

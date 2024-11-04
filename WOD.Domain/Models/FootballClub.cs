@@ -13,29 +13,28 @@ public class FootballClub
 
     public string Logo { get; private set; }   
         
-    public List<Match> Matches {get; private set; }
+    public byte Games {get; private set; }
 
-    public int Wins { get; private set ; }
+    public byte Wins { get; private set ; }
 
-    public int Loses { get; private set; }
+    public byte Loses { get; private set; }
 
-    public int Draws { get; private set; }
+    public byte Draws { get; private set; }
 
-    public int GoalsScored { get; private set; }
+    public byte GoalsScored { get; private set; }
 
-    public int GoalsMissed { get; private set; }   
+    public byte GoalsMissed { get; private set; }   
         
-    public ushort TablePosition { get; private set; }
+    public byte TablePosition { get; private set; }
 
-    public int Points => Wins * 3 + Draws;
+    public int Points() => Wins * 3 + Draws;
 
-    public int GoalsDifference=> GoalsScored - GoalsMissed;
+    public int GoalsDifference() => GoalsScored - GoalsMissed;
 
     public FootballClub(string fullName, string logo)
     {           
         FullName = fullName;
         Logo = logo;
-        Matches = new List<Match>();
     }       
 
     public FootballClub() { }

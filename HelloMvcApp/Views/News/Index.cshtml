@@ -21,8 +21,8 @@
                 @foreach (var news in Model.AllNews)
                 {
                     <div class="news-widgets">
-                    <a news="blah" href="#"><img src="@news.Image" /></a>
-                    <span>@news.Title</span>
+                    <a news="blah" href="/News/Details?id=@(news.Id)"><img src="~/Content/NewsImages/@news.Image" /></a>
+                        <span>@news.Title</span>
                     </div>
                 }
             }

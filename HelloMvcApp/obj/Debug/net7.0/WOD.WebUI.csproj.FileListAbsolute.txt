@@ -91,3 +91,6 @@ D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\libman.json
 D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\EFCore.NamingConventions.dll
 D:\HelloMvcApp\HelloMvcApp\obj\Debug\net7.0\WOD.WebUI.csproj.CopyComplete
+D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\Microsoft.Extensions.Hosting.dll
+D:\HelloMvcApp\HelloMvcApp\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

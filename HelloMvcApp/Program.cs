@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using WebUI.Data;
+using WOD.WebUI.Data;
 using WOD.WebUI.Services;
 using WOD.WebUI.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEntityFrameworkNpgsql().AddDbContext<MainContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection")));
+builder.Services.AddEntityFrameworkNpgsql().
+    AddDbContext<PostgresContext>(options => options.UseNpgsql
+    ("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=250702iI;"));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
