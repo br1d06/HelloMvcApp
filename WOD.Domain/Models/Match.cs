@@ -27,13 +27,10 @@ public class Match
 		FootballClub2 = footballClub2;
 		FootballClub1Goals = footballClub1Goals;
 		FootballClub2Goals = footballClub2Goals;
-		if (footballClub1Goals > footballClub2Goals)
-			MatchResult = Result.FootballClub1Win;
-		else if (footballClub2Goals > footballClub1Goals)
-			MatchResult = Result.FootballClub2Win;
-		else
+		if (footballClub1Goals == footballClub2Goals)
 			MatchResult = Result.Draw;
-	}
+        MatchResult = footballClub1Goals > footballClub2Goals ? Result.FootballClub1Win : Result.FootballClub2Win;
+    }
 	public Match() { }
 }
 

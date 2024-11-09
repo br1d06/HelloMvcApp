@@ -11,9 +11,12 @@ namespace WOD.Domain.Models
 		[StringLength(60, MinimumLength = 3)]
 		[Required]
 		public string? Title { get; set; }
-		public string Text { get;  set; }
-		public string Image { get;  set; } 
-		public DateTime ReleaseDate { get; }
+        [Required]
+        public string Text { get;  set; }
+        [Required]
+        public string Image { get;  set; }
+        [Required]
+        public DateTime ReleaseDate { get; }
 
 		public News(string title, string text, string image, int id) 
 		{

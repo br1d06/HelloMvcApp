@@ -8,12 +8,12 @@
 @model WOD.WebUI.ViewModels.HomeViewModel;
 
 <div class="wrapper">
-	<div class="football-clubs-list">
+	<div class="football-clubs-list" style="height: 500px;">
 		@foreach (var footballClub in Model.FootballClubs)
 		{
 			<div class="team-widget">
-				<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName" style="vertical-align:middle;"></a>
-				<p style="vertical-align:middle;">@footballClub.FullName</p>
+				<a target="_blank" href="/FootballClubs/Details?id=@footballClub.Id"> <img src="@footballClub.Logo"><br>@footballClub.FullName</a>
+
 			</div>
 		}
 	</div>

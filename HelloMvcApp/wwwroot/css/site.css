@@ -327,18 +327,23 @@ header nav ul li:not(.active):not(.btn) a:hover{
 
 }
 
-.team-widget{
+.team-widget {
     height: auto;
-    width: 10%;
-    float: left;
+    width: 24%;
+    display: inline-block;
+    align-items: center;
+}
+
+.team-widget{
+    vertical-align:middle;
 }
 
 .team-widget img {
-    white-space: pre;
+  
 }
 
-.team-widget p {
-    vertical-align: middle;
+.team-widget span {
+    width: 75px;
 }
 
 .fc-card {
