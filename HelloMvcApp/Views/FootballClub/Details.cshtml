@@ -11,28 +11,28 @@
 
 
 <div class="wrapper">
-    <img src="@Html.DisplayFor(model=> model.Logo)" /> <h1>@Html.DisplayFor(model=> model.FullName)</h1>
+    <img src="@Html.DisplayFor(model=> model.Logo)" /> <h1>@Html.DisplayFor(model=> model.Name)</h1>
     
     <div class="fc-card">
             <dl>
                 <dt>Position in EPL Table</dt>
-                <dd>@Html.DisplayFor(model=> model.TablePosition)</dd>
+                <dd>@Html.DisplayFor(model=> model.Rank)</dd>
 			    <dt>Points</dt>
-                <dd>@Model.Points()</dd>
+                <dd>@Model.Points</dd>
 			    <dt>Games</dt>
 			    <dd>@Html.DisplayFor(model=> model.Games)</dd>			    			              
                 <dt>Wins</dt>
                 <dd>@Html.DisplayFor(model=> model.Wins)</dd>
                 <dt>Loses</dt>
-                <dd>@Html.DisplayFor(model=> model.Loses)</dd>
+                <dd>@Html.DisplayFor(model=> model.Losses)</dd>
                 <dt>Draws</dt>
-                <dd>@Html.DisplayFor(model=> model.Draws)</dd>
+                <dd>@Html.DisplayFor(model=> model.Ties)</dd>
                 <dt>Goals scored</dt>
-                <dd>@Html.DisplayFor(model=> model.GoalsScored)</dd>
+                <dd>@Html.DisplayFor(model=> model.GoalsFor)</dd>
                 <dt>Goals missed</dt>
-                <dd>@Html.DisplayFor(model=> model.GoalsMissed)</dd>
+                <dd>@Html.DisplayFor(model=> model.GoalsAgainst)</dd>
                 <dt>Goals difference</dt>
-                <dd>@Model.GoalsDifference()</dd>
+                <dd>@Model.GoalsDifference</dd>
             </dl>
     </div>
 </div> 

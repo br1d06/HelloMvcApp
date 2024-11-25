@@ -25,68 +25,118 @@ namespace WOD.WebUI.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityAlwaysColumn(b.Property<int>("Id"));
+
+                    b.Property<byte>("Games")
+                        .HasColumnType("smallint")
+                        .HasColumnName("games");
+
+                    b.Property<byte>("GoalsAgainst")
+                        .HasColumnType("smallint")
+                        .HasColumnName("goalsagainst");
+
+                    b.Property<int>("GoalsDifference")
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Draws")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("Games")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("GoalsMissed")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("GoalsScored")
-                        .HasColumnType("integer");
+                    b.Property<byte>("GoalsFor")
+                        .HasColumnType("smallint")
+                        .HasColumnName("goalsfor");
 
                     b.Property<string>("Logo")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("logo");
 
-                    b.Property<int>("Loses")
+                    b.Property<byte>("Losses")
+                        .HasColumnType("smallint")
+                        .HasColumnName("losses");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.Property<int>("Points")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TablePosition")
-                        .HasColumnType("integer");
+                    b.Property<byte>("Rank")
+                        .HasColumnType("smallint")
+                        .HasColumnName("rank");
 
-                    b.Property<int>("Wins")
-                        .HasColumnType("integer");
+                    b.Property<byte>("Ties")
+                        .HasColumnType("smallint")
+                        .HasColumnName("ties");
 
-                    b.HasKey("Id");
+                    b.Property<byte>("Wins")
+                        .HasColumnType("smallint")
+                        .HasColumnName("wins");
 
-                    b.ToTable("FootballClubs");
+                    b.HasKey("Id")
+                        .HasName("EPL_Table_pkey");
+
+                    b.ToTable("footballclub_info", null, t =>
+                        {
+                            t.HasComment("Статистика футбольных клубов АПЛ 2024.");
+                        });
                 });
 
             modelBuilder.Entity("WOD.Domain.Models.News", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityAlwaysColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Image")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("news_image");
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("news_text");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(60)
-                        .HasColumnType("character varying(60)");
+                        .HasColumnType("character varying(60)")
+                        .HasColumnName("title");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("news_pkey");
 
-                    b.ToTable("News");
+                    b.ToTable("News", t =>
+                        {
+                            t.HasComment("Новости\nСодержит: Заголовок, картинку, текст новости и ID.");
+                        });
+                });
+
+            modelBuilder.Entity("WOD.WebUI.Admin", b =>
+                {
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("login");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("password");
+
+                    b.HasKey("Id")
+                        .HasName("admins_pkey");
+
+                    b.ToTable("admins", (string)null);
                 });
 #pragma warning restore 612, 618
         }

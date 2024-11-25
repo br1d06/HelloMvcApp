@@ -14,7 +14,7 @@
 
 		@foreach (var footballClub in Model.FootballClubs)
 		{
-			<a target="_blank" href="#"> <img src="@footballClub.Logo" alt="@footballClub.FullName" height="75" width="75"> </a>
+			<a target="_blank" href="/FootballClubs/Details?id=@footballClub.Id"> <img src="@footballClub.Logo" alt="@footballClub.Name" height="75" width="75"> </a>
 		}
 
 	</div>
@@ -50,9 +50,9 @@
 			{							
 			<tr>
 				<th scope="row">@(i+1)</th>
-				<td><img src="@Model.FootballClubs[i].Logo"/> @Model.FootballClubs[i].FullName</td>
-				<td>@Model.FootballClubs[i].Points()</td>
-				<td>@Model.FootballClubs[i].GoalsDifference()</td>
+				<td><img src="@Model.FootballClubs[i].Logo"/> @Model.FootballClubs[i].Name</td>
+				<td>@Model.FootballClubs[i].Points</td>
+				<td>@Model.FootballClubs[i].GoalsDifference</td>
 			</tr>
 			}
 		</tbody>

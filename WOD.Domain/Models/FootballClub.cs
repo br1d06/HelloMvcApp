@@ -10,7 +10,7 @@ namespace WOD.Domain.Models;
 public class FootballClub
 {
     public int Id { get; set; }
-    public string FullName { get; private set; }
+    public string Name { get; private set; }
 
     public string Logo { get; private set; }   
         
@@ -18,23 +18,23 @@ public class FootballClub
 
     public byte Wins { get; private set ; }
 
-    public byte Loses { get; private set; }
+    public byte Losses { get; private set; }
 
-    public byte Draws { get; private set; }
+    public byte Ties { get; private set; }
 
-    public byte GoalsScored { get; private set; }
+    public byte GoalsFor { get; private set; }
 
-    public byte GoalsMissed { get; private set; }   
+    public byte GoalsAgainst { get; private set; }   
         
-    public byte TablePosition { get; private set; }
+    public byte Rank { get; private set; }
 
-    public int Points() => Wins * 3 + Draws;
+    public byte Points {  get; private set; }
 
-    public int GoalsDifference() => GoalsScored - GoalsMissed;
+    public byte GoalsDifference {  get; private set; }
 
     public FootballClub(string fullName, string logo)
     {           
-        FullName = fullName;
+        Name = fullName;
         Logo = logo;
     }       
 

@@ -61,14 +61,16 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Id)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("id");
-            entity.Property(e => e.Draws).HasColumnName("draws");
-            entity.Property(e => e.FullName).HasColumnName("foolname");
-            entity.Property(e => e.Games).HasColumnName("games");            
-            entity.Property(e => e.GoalsMissed).HasColumnName("goalsmissed");
-            entity.Property(e => e.GoalsScored).HasColumnName("goalsscored");
+            entity.Property(e => e.Ties).HasColumnName("ties");
+            entity.Property(e => e.Name).HasColumnName("name");
+            entity.Property(e => e.Games).HasColumnName("games");
+            entity.Property(e => e.Points).HasColumnName("points");
+            entity.Property(e => e.GoalsAgainst).HasColumnName("goalsagainst");
+            entity.Property(e => e.GoalsFor).HasColumnName("goalsfor");
+            entity.Property(e => e.GoalsDifference).HasColumnName("goalsdifference");
             entity.Property(e => e.Logo).HasColumnName("logo");
-            entity.Property(e => e.Loses).HasColumnName("loses");
-            entity.Property(e => e.TablePosition).HasColumnName("tableposition");
+            entity.Property(e => e.Losses).HasColumnName("losses");
+            entity.Property(e => e.Rank).HasColumnName("rank");
             entity.Property(e => e.Wins).HasColumnName("wins");
         });
 
