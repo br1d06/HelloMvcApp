@@ -76,11 +76,11 @@ namespace HelloMvcApp.Controllers
 			return RedirectToAction("Index");
 		}
 
-		public IActionResult Delete()
+		public IActionResult IndexAdmin()
 		{
             var newsViewModel = new NewsViewModel(_context.News.ToList());
 
-            return View("~/Views/News/Delete.cshtml", newsViewModel);
+            return View("~/Views/News/IndexAdmin.cshtml", newsViewModel);
 		}
        
         // POST: Movies/Delete/5
