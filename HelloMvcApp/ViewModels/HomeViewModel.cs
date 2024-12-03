@@ -16,7 +16,12 @@ public class HomeViewModel
 
 	public HomeViewModel(List<FootballClub> footballClubs,List<News> allNews, int index=0)
     {
+        footballClubs.Sort();
         FootballClubs = footballClubs;
+        for(int i = 0; i < footballClubs.Count; i++)
+        {
+            footballClubs[i].Rank = (byte)(i + 1);
+        }
         ContainerNews = NewsService.GetContainerNews(allNews);
         DefaultNews= NewsService.DefaultNews;
         TranslayedNews = ContainerNews[index];

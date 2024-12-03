@@ -29,6 +29,8 @@ public class HomeController : Controller
     {
         var homeViewModel = new HomeViewModel(_context.FootballClubs.ToList(), _context.News.ToList());
 
+        _footballClubService.GetData();
+
         return View("~/Views/Home/Index.cshtml", homeViewModel);
 
     }

@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace WOD.Domain.Models;
-public class FootballClub
+public class FootballClub : IEquatable<FootballClub>, IComparable<FootballClub>
 {
     public int Id { get; set; }
-    public string Name { get; private set; }
+    public string Name { get;  set; }
 
-    public string Logo { get; private set; }   
+    public string Logo { get;  set; }   
         
-    public byte Games {get; private set; }
+    public byte Games {get;  set; }
 
-    public byte Wins { get; private set ; }
+    public byte Wins { get; set; }
 
-    public byte Losses { get; private set; }
+    public byte Losses { get; set; }
 
-    public byte Ties { get; private set; }
+    public byte Ties { get; set; }
 
-    public byte GoalsFor { get; private set; }
+    public byte GoalsFor { get; set; }
 
-    public byte GoalsAgainst { get; private set; }   
+    public byte GoalsAgainst { get; set; }   
         
-    public byte Rank { get; private set; }
+    public byte Rank { get; set; }
 
-    public byte Points {  get; private set; }
+    public byte Points {  get; set; } 
 
-    public byte GoalsDifference {  get; private set; }
+    public sbyte GoalsDifference {  get; set; }
 
     public FootballClub(string fullName, string logo)
     {           
@@ -39,4 +39,22 @@ public class FootballClub
     }       
 
     public FootballClub() { }
+	public int CompareTo(FootballClub compareFootballClub)
+	{
+		// A null value means that this object is greater.
+		if (compareFootballClub == null)
+			return 1;
+
+		else
+			return compareFootballClub.Points.CompareTo(this.Points);
+	}
+	public override int GetHashCode()
+	{
+		return Points;
+	}
+	public bool Equals(FootballClub other)
+	{
+		if (other == null) return false;
+		return other.Points.Equals(this.Points);
+	}
 }
